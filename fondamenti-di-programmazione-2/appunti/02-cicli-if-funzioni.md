@@ -1,6 +1,6 @@
 # 2023-09-27
 
-Esiste un legame tra struct e classi.
+Esiste un legame tra `struct` e classi.
 
 `struct` serve a definire tipi personalizzati (o concetti).
 
@@ -33,7 +33,7 @@ int main() {
 ```cpp
 punto p1; p1.x = 3; p1.y = 4;
 punto *pp1 = &p1;
-cout << (*pp1).x << (*pp1).y << endl; // prima la deferenziozione e poi l'accesso a x
+cout << (*pp1).x << (*pp1).y << endl; // prima la dereferenziazione e poi l'accesso a x
 cout << pp1->x << pp2->y << endl; // alternativa
 ```
 

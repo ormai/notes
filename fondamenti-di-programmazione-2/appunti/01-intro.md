@@ -75,24 +75,24 @@ Tipi:
 - char
 - bool
 
-`int i1;` è meglio non fare assunzioni sul valore di `i1`. È sempre meglio inizilizzare una variabile se il valore iniziale è importante: `int i1 = 0;`
+`int i1;` è meglio non fare assunzioni sul valore di `i1`. È sempre meglio inizializzare una variabile se il valore iniziale è importante: `int i1 = 0;`
 
 ```c++
 bool b = true;
 bool c = false;
 ```
 
-i bool occupano sempre un byte anche se usano un solo bit.
+I bool occupano sempre un byte anche se usano un solo bit.
 
 Modi per inizializzare una variabile
 - `int n = 0;`
-- `int n{0};` list inizialization
+- `int n{0};` list initialization
 - `int n = {0};` idem con `=`
 - `int u(0);` per gli oggetti
 
 ```c++
 bool i = 42; // è true perché solo 0 è false, mentre tutto il resto true
-int j = i; // i non conterra 42 ma 1
+int j = i; // i non conterrà 42 ma 1
 int k = 3.14; // k sarà 3
 float pi = k; // pi sarà solo 3 perché il .14 è stato perso
 ```
@@ -105,7 +105,7 @@ float pi = k; // pi sarà solo 3 perché il .14 è stato perso
     using namespace::std;
 
     const int reused = 42; // globale
-    // const per impedire di dmodificarla
+    // const per impedire di modificarla
 
     int main() {
         int unique = 0
@@ -127,7 +127,7 @@ float pi = k; // pi sarà solo 3 perché il .14 è stato perso
 
 Il compilatore cerca di capire di che tipo è la variabile.
 
-`auto i;` non va bene perhcé non c'è modo di individuare il tipo.
+`auto i;` non va bene perché non c'è modo di individuare il tipo.
 `auto i = 0;` i è interpreta come `int`
 `auto val = val1 + val2;` val assume il tipo del risultato della somma.
 
@@ -172,8 +172,8 @@ Il compilatore cerca di capire di che tipo è la variabile.
     int *p = &val; // p conterrà l'indirizzo di val in memoria
 
     cout << p << endl; // stampa l'indirizzo
-    cout << *p << endl; // stampa 42 contenuto nella cella di meoria a cui punta *p
-    // quest'ultima è detta deferenziazione
+    cout << *p << endl; // stampa 42 contenuto nella cella di memoria a cui punta *p
+    // quest'ultima è detta dereferenziazione
     ```
 
 Un puntatore può
