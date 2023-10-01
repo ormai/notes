@@ -8,7 +8,7 @@ aliases:
 To *load* and *store* data between [memory](memory.md) and [registers](registers.md) the instructions must be able to address the data. This can be accomplished in different ways:
 - **register address** `[Xn|sp]`. The square brackets syntax is used to indicate that the address contained in `Xn|sp` is being used for addressing
 - **signed immediate offset** `[Xn|sp, <±imm9>]`. The immediate value (the offset) is added to the content of `Xn|sp`, the result is used to address. The immediate value can be positive or negative and cannot occupy more than 9 bits.
-- **unsigned immediate scaled offset** `[Xn|sp, <imm12>]`. The offset is added to the contents of the register. The addressing starts at the the address resulting from the calculation and lasts eight bytes. The immediate offset must be `>= 0` and occupy not more than 12 bits. All this is like just doing a signed offset, the assembler will use scaled offset depending on the size of the offset. Before any of this happens, the offset is **scaled** like so:
+- **unsigned immediate scaled offset** `[Xn|sp, <imm12>]`. The offset is added to the contents of the register. The addressing starts at the address resulting from the calculation and lasts eight bytes. The immediate offset must be `>= 0` and occupy not more than 12 bits. All this is like just doing a signed offset, the assembler will use scaled offset depending on the size of the offset. Before any of this happens, the offset is **scaled** like so:
     - for a 64-bit register the immediate value is shifted left by three bits
     - for 32 bits of load-store the `imm` is shifted left by two bits
     - for half words `imm` is shifted by one bit left

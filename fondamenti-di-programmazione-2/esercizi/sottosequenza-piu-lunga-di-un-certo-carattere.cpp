@@ -1,5 +1,5 @@
 // Leggere una sequenza di n cifre binarie con n letto da input individuare la
-// lunghezza massima della sottosequenza costituita da cifre uguali
+// lunghezza massima della sotto sequenza costituita da cifre uguali
 
 #include <iostream>
 using namespace std;

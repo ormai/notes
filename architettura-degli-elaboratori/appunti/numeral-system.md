@@ -45,10 +45,10 @@ $$94883_{10}=271143_8$$
 
 ### From Binary to decimal
 
-The conversion of a binary numbers varies based on the the [[data#Sign magnitude|sign]] of the number itself.
+The conversion of a binary numbers varies based on the[[data#Sign magnitude|sign]] of the number itself.
 
 1. If the most significant bit is $1$:
-    1. find the [[data#Complement|two's complement]]
+    1. find the [two's complement](data#Complement)
     2. convert the complement to base $10$
     3. add a negative sign
 2. otherwise
@@ -58,4 +58,4 @@ The conversion of a binary numbers varies based on the the [[data#Sign magnitude
 
 1. remove the sign
 2. convert to binary
-3. take the [[data#Complement|two's complement]]
+3. take the [two's complement](data#Complement)

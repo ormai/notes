@@ -36,7 +36,7 @@ int main() {
 }
 ```
 
-- `#include` è una direttiva per il compilatore.
+- `#include` è una direttiva per il *preprocessor*.
     (Esiste un `PATH` per tutte le librerie).
 - `cout` non è un'istruzione ma uno stream o buffer di dati^[https://en.wikipedia.org/wiki/Data_buffer]
 - `std` imposta lo scope (o namespace ?)

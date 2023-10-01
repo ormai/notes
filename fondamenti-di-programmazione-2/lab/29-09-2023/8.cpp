@@ -1,4 +1,4 @@
-/* Dati due numberi interi positivi c, a ∈ N, il logaritmo intero di c in base a
+/* Dati due numeri interi positivi c, a ∈ N, il logaritmo intero di c in base a
  * è un numero b ∈ N tale che c = ab. Scrivere una funzione con segnatura
  * int log_int(int c, int a) che calcoli il logaritmo intero di c in base a, o
  * restituisca −1 se non esiste.

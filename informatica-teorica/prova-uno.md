@@ -90,6 +90,6 @@ Data la seguente formula della logica proposizionale
 
 $$(A \iff B) \implies (A \implies B)$$
 
-verificare, mediante il metodo dei tableaux **e** mediante il metodo delle tabelle di verità, se è soddisfacibile, tautologica o contraddittoria. Nel caso in cui sia soddisfacibile fornire almeno un modello.
+Verificare, mediante il metodo dei tableaux **e** mediante il metodo delle tabelle di verità, se è soddisfacibile, tautologica o contraddittoria. Nel caso in cui sia soddisfacibile fornire almeno un modello.
 
 ![[esercizio]]

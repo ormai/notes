@@ -2,7 +2,7 @@
 
 The [bit](bit.md) is the basic unit of data for digital computers. A bit can be either $0$ or $1$. To represent numbers bigger than $1$ bits are combined.
 
-Computers today group $8$ bits, forming a **byte**. Some computers group $4$ bits into a **nibble**, wich represent exactly an hexadecimal digit.
+Computers today group $8$ bits, forming a **byte**. Some computers group $4$ bits into a **nibble**, which represent exactly an hexadecimal digit.
 
 Computers also group bits into 16, 32 and 64.
 
@@ -22,7 +22,7 @@ Positive and negative integers can be represented in different ways.
 
 ### Sign magnitude
 
-The most significant bit is used to stor#e the sign of the number while the rest of the bits store the magnitude of the number. If the MSB is $0$ the integer is positive, if it si $1$ then it is negative.
+The most significant bit is used to store the sign of the number while the rest of the bits store the magnitude of the number. If the MSB is $0$ the integer is positive, if it si $1$ then it is negative.
 
 $11111110$ as a signed integer is $-126$.
 

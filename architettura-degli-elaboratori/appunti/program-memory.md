@@ -20,4 +20,4 @@ Statically allocated variables are stored in `.data`, `.rodata`, `.bss`.
 Dynamically allocated variables are stored in the heap.
 Automatically (local) allocated variables are stored on the stack.
 
-![[Pasted image 20230325105320.png|left]]
+![](Pasted image 20230325105320.png)

@@ -7,10 +7,10 @@
  *
  * Quesito 1. Si scriva un programma C++ che, letta una tale sequenza seq(S):
  * • fornisca in uscita la cardinalità della famiglia (cioè il numero degli
- *   insiemi che essa contiene); nell’esempio evidenziato sopra, il programma
+ *   insiemi che essa contiene); nell'esempio evidenziato sopra, il programma
  *   dovrebbe restituire 5;
  * • fornisca in uscita la cardinalità massima degli insiemi della famiglia;
- *   nell’esempio evidenziato sopra, il programma dovrebbe restituire 4;
+ *   nell'esempio evidenziato sopra, il programma dovrebbe restituire 4;
  *
  * Quesito 2. Assumendo che la sequenza seq(S) contenga al più 100 interi, si
  * scriva un programma C++ che legga la sequenza, eventualmente la memorizzi,

@@ -6,7 +6,7 @@
  * Un picco massimo di inquinamento è un massimo relativo nella sequenza, ossia
  * un dato che è maggiore sia di quello ad esso precedente sia di quello ad
  * esso seguente. Per ogni piccolo il programma deve visualizzare il valore del
- * tasso di inquianemento ed il giorno in cui si verifica (i giorni vanno
+ * tasso di inquinamento ed il giorno in cui si verifica (i giorni vanno
  * contati a partire da 1). Il programma deve altresì visualizzare il numero
  * dei picchi rilevati ed il numero totale dei dati in input. Il primo e
  * l’ultimo dato non possono essere dei picchi massimi di inquinamento.
