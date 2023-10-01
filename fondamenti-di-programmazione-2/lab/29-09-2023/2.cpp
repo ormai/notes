@@ -37,7 +37,7 @@ int main() {
     }
   }
 
-  cout << cardFamiglia << "\n"
+  cout << cardFamiglia << '\n'
        << maxCardInsieme << endl;
 
   return 0;

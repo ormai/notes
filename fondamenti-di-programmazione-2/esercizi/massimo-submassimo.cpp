@@ -26,7 +26,7 @@ int main() {
     } else return -1;
   }
 
-  cout << "Il massimo è: " << max << "\n"
+  cout << "Il massimo è: " << max << '\n'
        << "Il submassimo è: " << submax << endl;
 
   return 0;

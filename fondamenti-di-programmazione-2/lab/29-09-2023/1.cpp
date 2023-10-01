@@ -38,7 +38,7 @@ int main() {
 
     while (oggi != -1) {
       if (ieri > avantieri && ieri > oggi) {
-        cout << ieri << " " << giorno << endl;
+        cout << ieri << ' ' << giorno << endl;
         ++picchi;
       }
 
@@ -49,8 +49,8 @@ int main() {
       ++giorno;
     }
 
-    cout << "Numero di picchi massimi rilevati: " << picchi << endl;
-    cout << "Numero totale dei dati " << giorno << endl;
+    cout << "Numero di picchi massimi rilevati: " << picchi << '\n'
+         << "Numero totale dei dati " << giorno << endl;
   }
 
   return 0;

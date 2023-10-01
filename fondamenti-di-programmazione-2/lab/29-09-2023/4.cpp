@@ -17,7 +17,7 @@ int main() {
   int x, y;
   cin >> x >> y;
 
-  cout << somma(x, y) << "\n"
+  cout << somma(x, y) << '\n'
        << prodotto(x, y) << endl;
 
   return 0;
