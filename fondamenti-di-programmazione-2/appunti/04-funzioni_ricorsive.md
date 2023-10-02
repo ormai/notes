@@ -2,7 +2,9 @@
 
 ## Funzioni ricorsive
 
-Una funzione che direttamente o indirettamente chiama se stessa. Una funzione ricorsiva diretta chiama se stessa nel suo stesso corpo. Una funzione ricorsiva indiretta `f` chiama un'altra funzione `g`, e questa (nel suo corpo) chiama `f`.
+È una funzione che direttamente (già nel proprio corpo) o indirettamente (tramite una o più funzioni diverse) chiama se stessa.
+
+Quando si progetta una funzione ricorsiva è utile pensarla già funzionante.
 
 ```cpp
 int fact(int n) {
@@ -39,10 +41,10 @@ A volte una soluzione iterativa è da preferire sull'equivalente ricorsiva.
 
 ---
 
-Trovare il massimo comun divisore tra due numeri.
+Trovare il *massimo comun divisore* tra due numeri.
 
-$mcd(x,y)=x$ se $y=0$
-$mcd(x,y)=mcd(y, r)$ se $y>0$ e $x=q*y+r$ ($r$ è il resto della divisione)
+$mcd(x,y) = x$ se $y = 0$
+$mcd(x,y) = mcd(y, r)$ se $y>0$ e $x = q * y + r$ ($r$ è il resto della divisione)
 
 ```cpp
 int mcd(int x, int y) {
@@ -55,13 +57,13 @@ int mcd(int x, int y) {
 }
 ```
 
-E se $x<y$? Funziona ancora?
+E se $x < y$? Funziona ancora?
 
 Ad ogni chiamata ricorsiva si *riduce* la dimensione del problema.
 
-La funzione di Fibonacci è un esempio di *ricorsione non lineare* (Questa funzione per il `mcd` è invece *linear*
+La ricorsione in questa funzione avviene linearmente. La funzione di Fibonacci è un esempio di *ricorsione non lineare*, poiché ad ogni esecuzione si hanno più di una chiamata ricorsiva.
 
-## Problema torre di Hanoi
+## Problema della torre di Hanoi
 
 1. Si può muovere un solo disco per volta
 2. Non si può mettere un disco più grande su uno più piccolo.
@@ -139,7 +141,7 @@ void towerOfHanoi(int n, char fromRod, char toRod, char auxRod) {
 tipo nome[dimensione];
 
 // int a[10];
-const int a[10]; // meglio usare const così da render impossibile cambiarne la dimensione
+const int a[10]; // const rende impossibile cambiare la dimensione
 
 cout << a[0] << endl; // primo elemento
 cout << a[9] << endl; // ultimo elemento
@@ -177,11 +179,11 @@ int a[dim];
 Inizializzazione:
 
 ```cpp
-int sz = 5; // bisogna conoscere la dimensione
-int ia1[sz] = {0, 1, 2}; // inizializza solo i primi 3
+int sz = 5;
+int ia1[sz] = {0, 1, 2}; // inizializza solo i primi 3 (bisogna conoscere la dimensione)
 ```
 
-Non si può leggere tutto un array da input. Non si può usare `==` con gli array.
+Non si può leggere tutto un array da input e non si può usare `==` con gli array.
 
 ```cpp
 const int dim = 10;
