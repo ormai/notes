@@ -127,8 +127,10 @@ pi -> +-------+   ---+
 ```
 
 ```cpp
-delete pi; // elimina ciò a cui pi punta, ma pi resta indefinito
+delete pi; // distrugge l'oggetto a cui pi punta, ma pi resta indefinito
 ```
+
+([doc](https://devdocs.io/cpp/language/delete))
 
 ```cpp
 int i, *pi1 = &i, *pi2 = nullptr;
