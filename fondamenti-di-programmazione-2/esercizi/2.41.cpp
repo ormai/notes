@@ -2,11 +2,7 @@
 #include <string>
 using namespace std;
 
-struct Sales_data {
-  string bookNo;
-  unsigned units_sold;
-  float revenue;
-};
+#include "2.42.hpp"
 
 int main() {
   Sales_data data1, data2;

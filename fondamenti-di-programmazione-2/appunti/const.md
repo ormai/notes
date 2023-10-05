@@ -12,7 +12,7 @@ Const objects are local to a file. To share a const between file without redefin
 extern const int someVar = getTheVar();
 ```
 
-one time, and then, in every other file
+One time, and then, in every other file
 
 ```cpp
 extern const int someVar;

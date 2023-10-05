@@ -8,7 +8,7 @@ aliases:
 
 # Algoritmo
 
-<span class="dcaps">I</span>l termine *algoritmo* deriva dal nome della città di nascita di Abu Ja'far Mohammed ibn Musa al-==Khowarizmi==, un autore scientifico persiano del IX secolo. Egli scrisse intorno all'825, il trattato "Kitab ==al jabr== w'al-muqabala" che verteva su regole per la semplificazione delle [[equazione|equazioni]]. Dal titolo del trattato deriva **algebra** (*al jabr*) e **algoritmo** da *Khowarizmi*. In origine era *agorismo* trasformato in *algoritmo* per analogia con *aritmetica*.
+Il termine *algoritmo* deriva dal nome della città di nascita di Abu Ja'far Mohammed ibn Musa al-==Khowarizmi==, un autore scientifico persiano del IX secolo. Egli scrisse intorno all'825, il trattato "Kitab ==al jabr== w'al-muqabala" che verteva su regole per la semplificazione delle [[equazione|equazioni]]. Dal titolo del trattato deriva **algebra** (*al jabr*) e **algoritmo** da *Khowarizmi*. In origine era *agorismo* trasformato in *algoritmo* per analogia con *aritmetica*.
 Un algoritmo è una descrizioni in più fasi della soluzione di un problema.
 
 > [!tip] Algoritmo: sequenza finita di passi che risolve in un tempo finito un problema.
