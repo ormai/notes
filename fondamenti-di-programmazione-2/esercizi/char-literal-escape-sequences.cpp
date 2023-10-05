@@ -2,7 +2,7 @@
 using namespace std;
 
 int main() {
-  cout << 'a' << '\n' // char
+  cout << 'a' << '\n'  // char
        << "a" << endl; // array of chars: ['a', '\0']
 
   // generalized escape sequence

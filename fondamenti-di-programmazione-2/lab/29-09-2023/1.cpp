@@ -32,9 +32,8 @@ using namespace std;
 int main() {
   int giorno = 2, picchi = 0, avantieri, ieri, oggi;
 
-  if (cin >> avantieri && avantieri != -1
-      && cin >> ieri && ieri != -1
-      && cin >> oggi) {
+  if (cin >> avantieri && avantieri != -1 && cin >> ieri && ieri != -1 &&
+      cin >> oggi) {
 
     while (oggi != -1) {
       if (ieri > avantieri && ieri > oggi) {

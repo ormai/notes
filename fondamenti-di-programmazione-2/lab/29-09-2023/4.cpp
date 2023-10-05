@@ -17,15 +17,12 @@ int main() {
   int x, y;
   cin >> x >> y;
 
-  cout << somma(x, y) << '\n'
-       << prodotto(x, y) << endl;
+  cout << somma(x, y) << '\n' << prodotto(x, y) << endl;
 
   return 0;
 }
 
-int somma(int x, int y) {
-  return x + y;
-}
+int somma(int x, int y) { return x + y; }
 
 int prodotto(int x, int y) {
   int sum = 0;

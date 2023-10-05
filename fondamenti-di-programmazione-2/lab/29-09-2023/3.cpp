@@ -16,6 +16,4 @@ int main() {
   return 0;
 }
 
-int arithmetic(int x, int y) {
-  return 2 * x + y * y;
-}
+int arithmetic(int x, int y) { return 2 * x + y * y; }

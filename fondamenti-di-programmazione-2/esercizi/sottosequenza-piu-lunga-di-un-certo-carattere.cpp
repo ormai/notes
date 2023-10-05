@@ -26,7 +26,8 @@ int main() {
         charSequenza = curr;
         lunghezza = 1;
       }
-    } else return -1;
+    } else
+      return -1;
     --n;
   }
 

@@ -25,7 +25,7 @@ int log_int(int c, int a) { // b = log_a c
   // ottiene c (o non lo si supera)
 
   while (prodottoParziale < c) {
-    prodottoParziale *= a; 
+    prodottoParziale *= a;
     ++b;
   }
 

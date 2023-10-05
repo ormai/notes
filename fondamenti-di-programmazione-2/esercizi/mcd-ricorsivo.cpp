@@ -13,10 +13,10 @@ int main() {
 }
 
 int mcd(int x, int y) {
-    int r = x % y;
+  int r = x % y;
 
-    if (r == 0)
-        return y;
+  if (r == 0)
+    return y;
 
-    return mcd(y, r);
+  return mcd(y, r);
 }

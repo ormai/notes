@@ -22,8 +22,10 @@ int main() {
 }
 
 long long int power(int a, int b) {
-  if (b == 1) return a;
-  if (b == 0) return b;
+  if (b == 1)
+    return a;
+  if (b == 0)
+    return b;
 
   return a * power(a, b - 1);
 }

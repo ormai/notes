@@ -8,12 +8,11 @@
 using namespace std;
 
 void printArr(const int[], const int);
-void compactArr(int[], int&);
+void compactArr(int[], int &);
 
 int main() {
   const int maxDim = 200;
   int arr[maxDim], tmp, size = 0;
-
 
   while (cin >> tmp && tmp != -1 && size <= maxDim) {
     arr[size] = tmp;

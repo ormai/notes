@@ -10,9 +10,12 @@ int main() {
   // inizializza max e submax e assicurati che non siano invertiti
   if (cin >> max && cin >> submax) {
     if (submax > max) {
-      int tmp = max; max = submax; submax = tmp; // swap
+      int tmp = max;
+      max = submax;
+      submax = tmp; // swap
     }
-  } else return -1;
+  } else
+    return -1;
 
   // elabora i restanti otto valori
   for (int i = 0; i < 8; ++i) {
@@ -23,7 +26,8 @@ int main() {
       } else if (curr > submax) {
         submax = curr;
       }
-    } else return -1;
+    } else
+      return -1;
   }
 
   cout << "Il massimo è: " << max << '\n'
