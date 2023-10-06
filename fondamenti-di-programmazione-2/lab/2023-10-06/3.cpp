@@ -1,4 +1,4 @@
-/* Consideriamo una sequenza di numeri reali S = (x1, . . . , xn), con xi ∈ R.
+/* Consideriamo una sequenza di numeri reali S = (x1, ..., xn), con xi ∈ R.
  * La loro media è definita come:
  *
  * µ(S) = 1/n * 󰒠^n_{i=1} x_i
@@ -43,3 +43,50 @@
  * Media: 0.91
  * Varianza: 18.3229
  */
+
+#include <iostream>
+using namespace std;
+
+void media_varianza(float[], int, float &, float &);
+
+int main() {
+  unsigned numArray;
+  cout << "Numero di array: ";
+  cin >> numArray;
+
+  float mus[numArray], sigmas[numArray];
+
+  for (int i = 0; i < numArray; i++) {
+    cout << "Lunghezza array #" << i + 1 << ": ";
+    int n;
+    cin >> n;
+
+    cout << "Elementi array #" << i + 1 << ": ";
+    float A[n];
+    for (int j = 0; j < n; j++)
+      cin >> A[j];
+
+    float mu, sigma;
+    media_varianza(A, n, mu, sigma);
+    mus[i] = mu;
+    sigmas[i] = sigma;
+  }
+
+  for (int i = 0; i < numArray; i++)
+    cout << "\nStatistiche per l'array #" << i + 1 << ":\nMedia: " << mus[i]
+         << "\nVarianza: " << sigmas[i] << endl;
+
+  return 0;
+}
+
+void media_varianza(float a[], int n, float &mu, float &sigma) {
+  mu = 0;
+  for (int i = 0; i < n; i++)
+    mu += a[i];
+  mu /= n;
+
+  sigma = 0;
+  for (int i = 0; i < n; i++)
+    sigma += (a[i] - mu) * (a[i] - mu);
+  sigma /= n;
+}

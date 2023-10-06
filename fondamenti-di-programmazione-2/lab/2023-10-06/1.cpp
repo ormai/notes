@@ -10,64 +10,58 @@
 #include <iostream>
 using namespace std;
 
-const int n = 4;
-bool puntoDiSella(int[][n]);
-int getMaxCol(int[][n], int);
-int getMinRow(int[][n], int);
+const unsigned N = 10;
+bool puntoDiSella(int[][N], int);
 
 int main() {
-  /* int M[n][n];
+  cout << "Dimesione della matrice quadrata (<= 10): ";
+  int n;
+  cin >> n;
+
+  int M[N][N];
+
+  cout << "Elementi della matrice quadrata: ";
   for (int i = 0; i < n; i++) {
-    for (int j = 0; i < n; i++)
+    for (int j = 0; j < n; j++) {
       cin >> M[i][j];
-  } */
+    }
+  }
 
-  int M1[n][n] = {
-    {1, 2, 3, 4},
-    {5, 6, 7, 8},
-    {9, 10, 11, 12},
-    {13, 14, 15, 16}
-  };
-
-  int M2[n][n] = {
-    {1, 2, 1, 2},
-    {4, 3, 4, 3},
-    {1, 2, 1, 2},
-    {4, 3, 4, 3},
-  };
-
-  if (puntoDiSella(M2))
+  if (puntoDiSella(M, n)) // sarà sempre vero, per qualsiasi M
     cout << "YES" << endl;
   else
     cout << "NO" << endl;
-
+  
   return 0;
 }
 
-bool puntoDiSella(int mat[n][n]) {
-  for (int i = 0; i < n; i++) {
-    for (int j = 0; j < n; j++) {
-      if (getMaxCol(mat, j) == mat[i][j] && getMinRow(mat, i) == mat[i][j])
-        return true;
+bool puntoDiSella(int mat[][N], int size) {
+  bool cond;
+  for (int i = 0; i < size; i++) {
+    for (int j = 0; j < size; j++) {
+      cond = true;
+      int element = mat[i][j];
+
+      for (int r = 0; r < size; r++) {
+        if (mat[r][j] > element) { // allora non è il massimo della colonna
+          cond = false;
+          break;
+        }
+      }
+
+      if (!cond)
+        break;
+
+      for (int c = 0; c < size; c++) {
+        if (mat[i][c] < element) { // allora non è il minimo della riga
+          cond = false;
+          break;
+        }
+      }
+
+      if (cond) // termina il prima possibile
+        return cond;
     }
   }
-  return false;
-}
-
-int getMaxCol(int mat[][n], int j) {
-  int max = mat[0][j];
-  for (int e = 1; e < n; e++) {
-    if (mat[e][j] > max)
-      max = mat[e][j];
-  }
-  return max;
-}
-
-int getMinRow(int mat[][n], int i) {
-  int min = mat[i][0];
-  for (int e = 1; e < n; e++) {
-    if (mat[i][e] < min)
-      min = mat[i][e];
-  }
-  return min;
+  return cond;
 }
