@@ -33,6 +33,6 @@ bool isPalindrome(int arr[], int first, int last) {
 
   if (arr[first] == arr[last])
     return isPalindrome(arr, ++first, --last);
-  else
-    return false;
+
+  return false;
 }
