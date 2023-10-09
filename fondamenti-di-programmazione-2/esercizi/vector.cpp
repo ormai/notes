@@ -23,7 +23,7 @@ int main() {
   else if (vec2 > vec3)
     cout << "vec2 is bigger" << endl;
 
-  vector<string> vec4(10); // vec 4 = "", "", "", "", "", "", "", "", "", ""
+  vector<string> vec4(10); // vec4 = "", "", "", "", "", "", "", "", "", ""
 
   for (int i : vec3)
     cout << i << endl;
