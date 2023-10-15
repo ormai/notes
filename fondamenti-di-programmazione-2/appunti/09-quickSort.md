@@ -25,7 +25,7 @@ int partizione(int arr[], int inizio, int fine) {
 
     while (i < j) {
         do
-            j++;
+            j--;
         while (arr[inizio] < arr[j]);
 
         do

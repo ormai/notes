@@ -18,7 +18,7 @@ void bubbleSort(int arr[], int size) {
     do {
         swaps = false;
         for (int i = 0; i < x - 1; i++) {
-            if (a[i] > arr[i + 1]) {
+            if (arr[i] > arr[i + 1]) {
                 int tmp = arr[i];
                 arr[i] = arr[i + 1];
                 arr[i + 1] = tmp;
@@ -104,7 +104,7 @@ void mergeSort(int arr[], int inizio, int fine) {
     if (fine - inizio < 20) 
         insertionSort(arr, inizio, fine);
     else {
-        int medio = fine + inizio / 2; // divisione in sotto problemi
+        int medio = (fine + inizio) / 2; // divisione in sotto problemi
 
         // sotto soluzioni
         mergeSort(arr, inizio, medio);
@@ -114,14 +114,14 @@ void mergeSort(int arr[], int inizio, int fine) {
     }
 }
 
-void merge(int arr, int inizio, int fine, int medio) {
+void merge(int arr[], int inizio, int fine, int medio) {
     int A[fine - inizio];
 
     int i1 = inizio, i2 = medio + 1, i3 = 0;
 
-    while ((i1 <= medio) && (i2 <= fined)) {
+    while ((i1 <= medio) && (i2 <= fine)) {
         if (arr[i1] < arr[i2]) {
-            A[i3] = V[i1];
+            A[i3] = arr[i1];
             i1++;
         } else {
             A[i3] = arr[i2];
@@ -136,7 +136,7 @@ void merge(int arr, int inizio, int fine, int medio) {
         i3++;
     }
 
-    while (i1 <= fin) {
+    while (i2 <= fine) {
         A[i3] = arr[i2];
         i2++;
         i3++;
