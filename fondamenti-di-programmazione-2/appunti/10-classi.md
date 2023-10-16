@@ -24,7 +24,9 @@ class nomeClasse {
 };
 ```
 
-Gli specificatori di accesso sono
+I membri di una classe possono essere dati o funzioni.
+
+Gli specificatori di visibilità e accesso sono:
 - `private`: i membri sono visibili solo ad altri membri della stessa classe
 - `protected`: equivalente a `private`, visibile a membri della stessa classe e di classi derivate (figli)
 - `public`: visibile a tutti
@@ -79,6 +81,7 @@ Rectangle::Rectangle() { // definizione costruttore di default
     width = 5;
     height = 5;
 }
+// Questo è usato quando viene creato un oggetto della classe senza inizializzarlo.
 
 /* OPPURE: preinizializzazione (inizializza mentre la classe viene creata)
 Quando si dichiarano classi dentro classi va necessariamente usato questo modo.
@@ -89,7 +92,7 @@ Rectangle::Rectangle(int x, int y): width(x), height(y) {
 */
 
 int main() {
-    Rectangle rect, rectB, rectC;
+    Rectangle rect, rectB, rectC; // usano il costruttore di default
 
     // rect.width; // non si può perché width è private
 
@@ -106,6 +109,8 @@ int main() {
     Rectangle rectD(4, 8);
 }
 ```
+
+Tutto ciò che si trova sotto public è l'*interfaccia* della classe, ciò che si può fare con la classe.
 
 L'inizializzazione di un ogetto-classe avviene tramite un *costruttore*. Funzioni membro di base `SET`, `GET` (setters e getters) per cambiare e ottenere i dati privati della classe.
 
