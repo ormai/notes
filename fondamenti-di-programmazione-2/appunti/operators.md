@@ -1,18 +1,20 @@
 # Operators cheat sheet
 
-- `+` `-` `*` `/` arithmetic
+- `+` `-` `*` `/` `%` arithmetic
+- `+` `-` unary plus and minus, used for positive and negative integers
 - `=` assignment
-- `+=` `-=` `*=` `/=` arithmetic and assignment
-- `++` `--` incrementing and decrementi, the position matters
+- `+=` `-=` `*=` `/=` `%=` arithmetic and assignment
 - `==` `>=` `<=` `>` `<` `!=` comparison
 - `.` dot operator for accessing class members
 - `::` scope operator used to access names in a namespace
 - `()` call operator. Follows the name of a function and calls it.
-- `->` member access operator: `pointer->member`
+- `->` member access operator: `pointer->member` (also *arrow operator*)
 - `<<` output
 - `>>` input
-- `&` `|` and, or that checks the whole condition
-- `&&` `||` and, or that stops early if possible
+- `? :` conditional expressoin
+- `&` `|` `~` `^` bitwise and or not xor
+- `>>` `<<` bitwise right and left shifts
+- `&&` `||` logical and, or that. Does short circuit evaluation.
 - `!` not
 - `#` directive for the preprocessor
 - `//` `/* */` comments
@@ -20,3 +22,5 @@
 - `&val` **address-of operator**: yields the address of val
 - `t &r` to declare val as a reference to an object of type `t`
 - `t *p` to declare p as a pointer to an object of type `t`
+- `[]` subscript operator
+- `++` `--` incrementing and decrementing, can be prefix or suffix
