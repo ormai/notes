@@ -1,5 +1,5 @@
 #include <iostream>
-using std::ostream, std::cout, std::cin, std::endl;
+using std::ostream, std::cout, std::endl;
 
 #include <cstring>
 using std::strlen, std::strcpy;
@@ -45,7 +45,7 @@ struct quesitoEsame {
 
 class BancaDatiEsercizi {
   quesitoEsame elenco[1000];
-  int dim;
+  int dim; // dim - 1 è il numero di esercizi presenti in elenco
 
   bool esiste(int);
   void inserisci_in_ordine(Esercizio &, Esercizio *, int, int &);
@@ -92,6 +92,15 @@ void BancaDatiEsercizi::inserisci_in_ordine(Esercizio &e, Esercizio *candidati,
 
 bool BancaDatiEsercizi::creaEsame(int n, int diff_M, int rep_M,
                                   Esercizio *esame) {
+
+  /* n: numero di esercizi
+   * diff_M: difficoltà massima, la somma delle difficoltà di ciascun esercizio
+   *         deve essere <= diff_M
+   *
+   * rep_M: massimo numero di ripetizioni accettabili per ciascun esercizio
+   *
+   */
+
   // FASE 1: estrai gli esercizi con rep < rep_M
   Esercizio *candidati = new Esercizio[dim];
   int nCandidati = 0;
@@ -141,7 +150,7 @@ int main() {
   // TEST
   BancaDatiEsercizi b;
 
-  Esercizio numeriTriangolari(93, "Numeri triangolari", 5);
+  Esercizio numeriTriangolari(93, (char *)"Numeri triangolari", 5);
 
   cout << numeriTriangolari << endl;
 
