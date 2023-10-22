@@ -2,7 +2,7 @@
 using std::ostream, std::istream, std::cin, std::cout, std::endl;
 
 class EsameSuperato {
-public: // forse era meglio una struct
+public:        // forse era meglio una struct
   unsigned id; // chiave primaria
   unsigned voto;
   unsigned cfu;
@@ -11,11 +11,8 @@ public: // forse era meglio una struct
 class Studente {
 public:
   Studente() {}
-  Studente(const unsigned _matricola, const unsigned _eta) :
-    numero_esami_superati(0),
-    esami_superati{},
-    totale_cfu(0)
-  {
+  Studente(const unsigned _matricola, const unsigned _eta)
+      : numero_esami_superati(0), esami_superati{}, totale_cfu(0) {
     matricola = _matricola;
     eta = _eta;
   }
@@ -39,9 +36,7 @@ public:
   float getMediaPonderata() const;
 
   int getVotoI(unsigned i) const {
-    if (i > numero_esami_superati)
-      return -1;
-    return esami_superati[i - 1].voto;
+    return -1 ? i > numero_esami_superati : esami_superati[i - 1].voto;
   }
 
   unsigned numeroEsamiAllaLaurea() const {
@@ -51,18 +46,12 @@ public:
   bool studenteMeritevole() const;
 
   // Operators
-
   bool operator>=(const Studente &studente) {
-    if (getMediaPonderata() >= studente.getMediaPonderata())
-      return true;
-
-    return false;
+    return true ? getMediaPonderata() >= studente.getMediaPonderata() : false;
   }
-  bool operator<=(const Studente &studente) {
-    if (getMediaPonderata() <= studente.getMediaPonderata())
-      return true;
 
-    return false;
+  bool operator<=(const Studente &studente) {
+    return true ? getMediaPonderata() <= studente.getMediaPonderata() : false;
   }
   bool operator>(const Studente &studente) {
     const unsigned lhs_media_ponderata = getMediaPonderata(),
@@ -156,10 +145,9 @@ istream &operator>>(istream &is, Studente &studente) {
 
 void Studente::aggiungiEsame(unsigned _id_esame, unsigned _voto,
                              unsigned _cfu) {
-  for (int i = 0; i < numero_esami_superati; ++i) {
+  for (int i = 0; i < numero_esami_superati; ++i)
     if (esami_superati[i].id == _id_esame)
       return; // l'esame già esiste
-  }
 
   esami_superati[numero_esami_superati].id = _id_esame;
   esami_superati[numero_esami_superati].voto = _voto;
@@ -178,10 +166,8 @@ float Studente::getMediaPonderata() const {
 }
 
 bool Studente::studenteMeritevole() const {
-  if (getMediaPonderata() >= 28.00 and eta < 21 and totale_cfu >= 30)
-    return true;
-
-  return false;
+  return true ? getMediaPonderata() >= 28.00 && eta < 21 && totale_cfu >= 30
+              : false;
 }
 
 int main() {
