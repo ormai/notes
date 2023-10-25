@@ -7,6 +7,7 @@ Testi:
 - (8838661618), Algoritmi e strutture dati, Demetrescu-Finocchi-Italiano, McGraw-Hill
 
 Esame: scritto, 3 ore, su carta
+Primo appello: 25/01/2024.
 
 Argomenti:
 - Introduzione a C++

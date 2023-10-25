@@ -93,7 +93,7 @@ Solitamente si ha anche un puntatore all'ultimo elemento della lista, detto *cod
 
 `list`
 
-Ogni nodo della lista tiene consto del nodo che segue e di quello di precede, quindi due puntatori. A differenza della `forward_list` è molto più facile muoversi indietro, oltre che avanti.
+Ogni nodo della lista tiene conto del nodo che segue e di quello di precede, quindi due puntatori. A differenza della `forward_list` è molto più facile muoversi indietro, oltre che avanti.
 
 Implementazione nel pdf del professore.
 
@@ -101,7 +101,6 @@ Implementazione nel pdf del professore.
 
 
 ```
-
     +---+  +---+  +---+  +---+  +---+
     |   |->|   |->|   |->|   |->|   |
     +---+  +---+  +---+  +---+  +---+
