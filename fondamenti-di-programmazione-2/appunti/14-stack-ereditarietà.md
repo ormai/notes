@@ -46,7 +46,7 @@ Ad ogni parentesi aperta deve seguire una parentesi chiusa.
 
 ---
 
-Qualsiasi funzione ricorsiva può essere riscritta ricorsivamente usando stack.
+Qualsiasi funzione ricorsiva può essere riscritta iterativamente usando eventualmente uno stack.
 
 ```cpp
 int main() {
@@ -130,6 +130,8 @@ int main() {
 I container possono contenere dati di un unico tipo. Un container di un tipo base può contenere tutti gli oggetti di classi derivata ma si potranno usare soltanto i membri della classe base.
 
 Le dichiarazioni `friend` non vengono ereditate.
+
+Costruttori:
 
 ```cpp
 class Mother {
