@@ -18,9 +18,8 @@ int main() {
   int x;
 
   while (cin >> x && x > 0) {
-    for (int i = 0; i < x; ++i) {
+    for (int i = 0; i < x; ++i)
       cout << '*';
-    }
     cout << endl;
   }
 

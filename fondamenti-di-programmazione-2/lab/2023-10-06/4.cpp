@@ -19,10 +19,7 @@ int main() {
   for (int i = 0; i < n; i++)
     cin >> A[i];
 
-  if (isPalindrome(A, 0, n - 1))
-    cout << "YES" << endl;
-  else
-    cout << "NO" << endl;
+  cout << (isPalindrome(A, 0, n - 1) ? "YES" : "NO") << endl;
 
   return 0;
 }

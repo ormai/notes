@@ -71,10 +71,7 @@ int main() {
     }
   }
 
-  if (trovata)
-    cout << "YES" << endl;
-  else
-    cout << "NO" << endl;
+  cout << (trovata ? "YES" : "NO") << endl;
 
   // QUARTO PUNTO
 

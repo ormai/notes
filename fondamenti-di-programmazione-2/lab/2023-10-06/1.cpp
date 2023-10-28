@@ -27,11 +27,8 @@ int main() {
     }
   }
 
-  if (puntoDiSella(M, n)) // sarà sempre vero, per qualsiasi M
-    cout << "YES" << endl;
-  else
-    cout << "NO" << endl;
-  
+  cout << (puntoDiSella(M, n) ? "YES" : "NO") << endl; // è sempre vero
+
   return 0;
 }
 

@@ -38,8 +38,8 @@ public:
   }
   void set_senior(const bool _senior) { senior = _senior; }
 
-  bool operator==(const Programmatore &p) { return true ? id == p.id : false; }
-  bool operator!=(const Programmatore &p) { return true ? id != p.id : false; }
+  bool operator==(const Programmatore &p) { return (id == p.id); }
+  bool operator!=(const Programmatore &p) { return (id != p.id); }
 };
 
 class GestoreProgrammatori {

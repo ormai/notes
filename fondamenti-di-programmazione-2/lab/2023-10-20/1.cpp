@@ -47,49 +47,41 @@ public:
 
   // Operators
   bool operator>=(const Studente &studente) {
-    return true ? getMediaPonderata() >= studente.getMediaPonderata() : false;
+    return (getMediaPonderata() >= studente.getMediaPonderata());
   }
 
   bool operator<=(const Studente &studente) {
-    return true ? getMediaPonderata() <= studente.getMediaPonderata() : false;
+    return (getMediaPonderata() <= studente.getMediaPonderata());
   }
   bool operator>(const Studente &studente) {
     const unsigned lhs_media_ponderata = getMediaPonderata(),
                    rhs_media_ponderata = studente.getMediaPonderata();
 
-    if ((lhs_media_ponderata > rhs_media_ponderata) ||
+    return (
+        (lhs_media_ponderata > rhs_media_ponderata) ||
         (lhs_media_ponderata == rhs_media_ponderata &&
          totale_cfu > studente.get_totale_cfu()) ||
-        (totale_cfu == studente.get_totale_cfu() && eta > studente.get_eta()))
-      return true;
-
-    return false;
+        (totale_cfu == studente.get_totale_cfu() && eta > studente.get_eta()));
   }
   bool operator<(const Studente &studente) {
     const unsigned lhs_media_ponderata = getMediaPonderata(),
                    rhs_media_ponderata = studente.getMediaPonderata();
 
-    if ((lhs_media_ponderata < rhs_media_ponderata) ||
+    return (
+        (lhs_media_ponderata < rhs_media_ponderata) ||
         (lhs_media_ponderata == rhs_media_ponderata &&
          totale_cfu < studente.get_totale_cfu()) ||
-        (totale_cfu == studente.get_totale_cfu() && eta < studente.get_eta()))
-      return true;
-
-    return false;
+        (totale_cfu == studente.get_totale_cfu() && eta < studente.get_eta()));
   }
   bool operator==(const Studente &studente) {
-    if (totale_cfu == studente.get_totale_cfu() &&
-        getMediaPonderata() == studente.getMediaPonderata() &&
-        eta == studente.get_eta())
-      return true;
-    return false;
+    return (totale_cfu == studente.get_totale_cfu() &&
+            getMediaPonderata() == studente.getMediaPonderata() &&
+            eta == studente.get_eta());
   }
   bool operator!=(const Studente &studente) {
-    if (totale_cfu != studente.get_totale_cfu() &&
-        getMediaPonderata() != studente.getMediaPonderata() &&
-        eta != studente.get_eta())
-      return true;
-    return false;
+    return (totale_cfu != studente.get_totale_cfu() &&
+            getMediaPonderata() != studente.getMediaPonderata() &&
+            eta != studente.get_eta());
   }
 
   friend ostream &operator<<(ostream &, Studente &);
@@ -166,8 +158,7 @@ float Studente::getMediaPonderata() const {
 }
 
 bool Studente::studenteMeritevole() const {
-  return true ? getMediaPonderata() >= 28.00 && eta < 21 && totale_cfu >= 30
-              : false;
+  return (getMediaPonderata() >= 28.00 && eta < 21 && totale_cfu >= 30);
 }
 
 int main() {

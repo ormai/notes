@@ -72,10 +72,7 @@ void Sequenza<T>::inserisci_elementi(unsigned i, const vector<T> &new_values) {
 template <class T> void Sequenza<T>::rimuovi_per_valori(T l, T u) {
   auto it = m_seq.begin();
   while (it != m_seq.end())
-    if (*it <= u && *it >= l)
-      m_seq.erase(it);
-    else
-      ++it;
+    (*it <= u && *it >= l) ? m_seq.erase(it) : ++it;
 }
 
 template <class T>

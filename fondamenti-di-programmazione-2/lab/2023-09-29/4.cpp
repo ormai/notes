@@ -26,8 +26,7 @@ int somma(int x, int y) { return x + y; }
 
 int prodotto(int x, int y) {
   int sum = 0;
-  for (int i = 0; i < y; ++i) {
+  for (int i = 0; i < y; ++i)
     sum += x;
-  }
   return sum;
 }

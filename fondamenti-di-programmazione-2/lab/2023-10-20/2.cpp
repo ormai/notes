@@ -64,7 +64,7 @@ ostream &operator<<(ostream &os, const Insieme<T> &_insieme) {
 }
 
 template <class T> bool Insieme<T>::vuoto() const {
-  return true ? elementi == 0 : false;
+  return (elementi == 0);
 }
 
 template <class T> bool Insieme<T>::svuota() {
