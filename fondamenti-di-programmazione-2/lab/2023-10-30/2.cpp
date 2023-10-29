@@ -3,8 +3,8 @@ using std::cout, std::endl;
 #include <vector>
 using std::vector;
 #include <algorithm>
-#include <cmath> // M_PI
 using std::sort;
+#include <cmath> // M_PI
 
 class FiguraGeometrica {
 public:
@@ -30,29 +30,9 @@ public:
   }
 };
 
-class Quadrato : public FiguraGeometrica {
-private:
-  double lato;
-
-public:
-  Quadrato() {}
-  Quadrato(const double &_lato) : lato(_lato) {}
-  Quadrato(const Quadrato &quadrato) : lato(quadrato.lato) {}
-
-  double perimetro() const { return 4 * lato; }
-  double area() const { return lato * lato; }
-
-  double getLato() const { return lato; }
-
-  void stampa() const {
-    cout << "Quadrato, lato: " << getLato() << " mm." << endl;
-  }
-};
-
 class Rettangolo : public FiguraGeometrica {
 private:
-  double latoMaggiore;
-  double latoMinore;
+  double latoMaggiore, latoMinore;
 
 public:
   Rettangolo() {}
@@ -70,6 +50,21 @@ public:
   void stampa() const {
     cout << "Rettangolo " << getLatoMaggiore() << 'x' << getLatoMinore()
          << " mm." << endl;
+  }
+};
+
+class Quadrato : public Rettangolo {
+public:
+  Quadrato() {}
+  Quadrato(const double &_lato) : Rettangolo(_lato, _lato) {}
+  Quadrato(const Quadrato &quadrato)
+      : Rettangolo(quadrato.getLatoMaggiore(), quadrato.getLatoMinore()) {}
+
+  double perimetro() const { return 4 * getLatoMaggiore(); }
+  double area() const { return getLatoMaggiore() * getLatoMinore(); }
+
+  void stampa() const {
+    cout << "Quadrato, lato: " << getLatoMaggiore() << " mm." << endl;
   }
 };
 
