@@ -5,23 +5,20 @@ using std::vector;
 using std::cout, std::endl;
 
 class Programmatore {
-  unsigned id;
-  unsigned eta;
-  unsigned stipendio;
-  unsigned anni_esperienza;
-  bool senior;
+  unsigned id{0};
+  unsigned eta{0};
+  unsigned stipendio{0};
+  unsigned anni_esperienza{0};
+  bool senior{false};
 
 public:
-  Programmatore() {}
+  Programmatore() = default;
   Programmatore(const unsigned &_id, const unsigned &_eta,
                 const unsigned &_stipendio, const unsigned &_anni_esperienza,
-                const bool &_senior) {
-    id = _id;
-    eta = _eta;
-    stipendio = _stipendio;
-    anni_esperienza = _anni_esperienza;
-    senior = _senior;
-  }
+                const bool &_senior)
+      : id(_id), eta(_eta), stipendio(_stipendio),
+        anni_esperienza(_anni_esperienza), senior(_senior) {}
+
   // Getters
   unsigned get_id() const { return id; }
   unsigned get_eta() const { return eta; }
@@ -43,11 +40,11 @@ public:
 };
 
 class GestoreProgrammatori {
-  vector<Programmatore> programmatori;
+  vector<Programmatore> programmatori{};
 
 public:
-  GestoreProgrammatori() : programmatori{} {}
-  GestoreProgrammatori(const vector<Programmatore> &vp) { programmatori = vp; }
+  GestoreProgrammatori() = default;
+  GestoreProgrammatori(const vector<Programmatore> &vp) : programmatori(vp) {}
 
   void assumiProgrammatore(const Programmatore &p);
   void licenziaProgrammatore(const Programmatore &p);
@@ -126,7 +123,6 @@ int main() {
   cout << manager.getMaxStipendioPerCategoria(false) << endl;
 
   cout << manager.getSeniorMenoEsperto().get_id() << endl;
-
 
   cout << manager.promuoviASenior() << endl;
 

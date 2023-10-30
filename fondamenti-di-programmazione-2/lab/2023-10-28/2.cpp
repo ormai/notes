@@ -7,12 +7,12 @@ using std::string, std::to_string;
 
 class Browser {
 private:
-  std::stack<string> pastPages;
-  string currentPage;
-  std::stack<string> futurePages;
+  std::stack<string> pastPages{};
+  string currentPage{"https://google.com"};
+  std::stack<string> futurePages{};
 
 public:
-  Browser() : currentPage("https://google.com") {}
+  Browser() = default;
   string getCurrentPage() const { return currentPage; };
   string getCount() const;
 

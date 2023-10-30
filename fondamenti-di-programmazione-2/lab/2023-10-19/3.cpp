@@ -5,8 +5,12 @@ using std::vector;
 using std::cout, std::endl;
 
 class Vettori {
+private:
+  vector<int> v1{};
+  vector<char> v2{};
+
 public:
-  Vettori() {}
+  Vettori() = default;
   Vettori(vector<int> _v1, vector<char> _v2) : v1(_v1), v2(_v2) {}
 
   void aggiungi(const int n) { v1.push_back(n); }
@@ -14,10 +18,6 @@ public:
   void rimuoviMinori(const int n);
   void rimuoviCarattere(const char c);
   void stampa() const;
-
-private:
-  vector<int> v1;
-  vector<char> v2;
 };
 
 void Vettori::rimuoviMinori(const int n) {

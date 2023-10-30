@@ -15,10 +15,10 @@ public:
 
 class Cerchio : public FiguraGeometrica {
 private:
-  double raggio;
+  double raggio{0.0};
 
 public:
-  Cerchio() {}
+  Cerchio() = default;
   Cerchio(const double &_raggio) : raggio(_raggio) {}
   Cerchio(const Cerchio &cerchio) : raggio(cerchio.raggio) {}
 
@@ -32,7 +32,7 @@ public:
 
 class Rettangolo : public FiguraGeometrica {
 private:
-  double latoMaggiore, latoMinore;
+  double latoMaggiore{0.0}, latoMinore{0.0};
 
 public:
   Rettangolo() {}
@@ -55,7 +55,7 @@ public:
 
 class Quadrato : public Rettangolo {
 public:
-  Quadrato() {}
+  Quadrato() = default;
   Quadrato(const double &_lato) : Rettangolo(_lato, _lato) {}
   Quadrato(const Quadrato &quadrato)
       : Rettangolo(quadrato.getLatoMaggiore(), quadrato.getLatoMinore()) {}

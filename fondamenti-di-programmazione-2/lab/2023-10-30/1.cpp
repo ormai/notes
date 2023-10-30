@@ -7,17 +7,15 @@ using std::cout, std::endl;
 
 class File {
 protected:
-  string nome;
-  unsigned dimensione; // dimensione in byte
+  string nome{""};
+  unsigned dimensione{0}; // dimensione in byte
 
 public:
-  File() {}
+  File() = default;
   File(const string &_nome, const unsigned &_dimensione)
       : nome(_nome), dimensione(_dimensione) {}
-  File(const File &file) {
-    nome = file.getNome();
-    dimensione = file.getDimensione();
-  }
+  File(const File &file)
+      : nome(file.getNome()), dimensione(file.getDimensione()) {}
 
   File &operator=(const File &file) {
     nome = file.getNome();
@@ -33,10 +31,10 @@ public:
 
 class FilePdf : public File {
 private:
-  bool firmato;
+  bool firmato{false};
 
 public:
-  FilePdf() {}
+  FilePdf() = default;
   FilePdf(const string &_nome, const unsigned &_dimensione, const bool _firmato)
       : File(_nome, _dimensione), firmato(_firmato) {}
   FilePdf(const FilePdf &pdf)
@@ -54,10 +52,10 @@ public:
 
 class FileAudio : public File {
 private:
-  unsigned durata; // durata in secondi
+  unsigned durata{0}; // durata in secondi
 
 public:
-  FileAudio() {}
+  FileAudio() = default;
   FileAudio(const string &_nome, const unsigned &_dimensione,
             const unsigned &_durata)
       : File(_nome, _dimensione), durata(_durata) {}
@@ -76,11 +74,11 @@ public:
 };
 
 class FileArchivio : public File {
-  vector<File *> archivio;
-  double fattoreDiCompressione;
+  vector<File *> archivio{};
+  double fattoreDiCompressione{0.0};
 
 public:
-  FileArchivio() {}
+  FileArchivio() = default;
   FileArchivio(const double &_fattoreDiCompressionee)
       : fattoreDiCompressione(_fattoreDiCompressionee) {}
   FileArchivio(const FileArchivio &fa)

@@ -2,17 +2,14 @@
 using std::istream, std::ostream, std::cout, std::endl;
 
 template <class T> class Insieme {
-  T *insieme;
   void aumentaCapacity();
-  unsigned elementi; // numero effettivo di elementi contenuti
-  unsigned capacity; // dimensione in memoria dell'insieme
+  unsigned elementi{0}; // numero effettivo di elementi contenuti
+  unsigned capacity{1}; // dimensione in memoria dell'insieme
+  T *insieme{new T[capacity]};
 
 public:
-  Insieme<T>() : elementi(0), capacity(1) { insieme = new T[capacity]; }
-  Insieme<T>(Insieme<T> &_insieme) {
-    const unsigned dim = _insieme.dimensione();
-    insieme = new T[dim];
-    capacity = dim;
+  Insieme<T>() = default;
+  Insieme<T>(Insieme<T> &_insieme) : capacity(_insieme.dimensione()) {
     for (unsigned i = 0; i < _insieme.dimensione(); ++i)
       insieme[i] = _insieme[i];
   }
@@ -63,9 +60,7 @@ ostream &operator<<(ostream &os, const Insieme<T> &_insieme) {
   return os;
 }
 
-template <class T> bool Insieme<T>::vuoto() const {
-  return (elementi == 0);
-}
+template <class T> bool Insieme<T>::vuoto() const { return (elementi == 0); }
 
 template <class T> bool Insieme<T>::svuota() {
   if (elementi != 0) {

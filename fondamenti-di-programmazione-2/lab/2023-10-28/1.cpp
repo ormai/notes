@@ -7,12 +7,12 @@ using std::ostream, std::cout, std::endl;
 
 template <class T> class Sequenza {
 private:
-  vector<T> m_seq;
+  vector<T> m_seq{};
 
 public:
-  Sequenza() {}
+  Sequenza() = default;
   Sequenza(const unsigned &size) : m_seq(size) {}
-  Sequenza(const Sequenza &s) { // costruttore di copia
+  Sequenza(const Sequenza &s) {
     for (auto i = 0; i < s.size(); ++i)
       m_seq.push_back(s[i]);
   }

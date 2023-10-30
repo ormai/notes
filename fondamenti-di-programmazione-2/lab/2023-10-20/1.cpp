@@ -2,20 +2,26 @@
 using std::ostream, std::istream, std::cin, std::cout, std::endl;
 
 class EsameSuperato {
-public:        // forse era meglio una struct
-  unsigned id; // chiave primaria
-  unsigned voto;
-  unsigned cfu;
+public:           // forse era meglio una struct
+  unsigned id{0}; // chiave primaria
+  unsigned voto{0};
+  unsigned cfu{0};
 };
 
 class Studente {
+private:
+  unsigned matricola{0};
+  unsigned eta{0};
+
+  static const unsigned ESAMI_TOTALI{24};
+  unsigned numero_esami_superati{0};
+  EsameSuperato esami_superati[ESAMI_TOTALI]{};
+  unsigned totale_cfu{0};
+
 public:
-  Studente() {}
+  Studente() = default;
   Studente(const unsigned _matricola, const unsigned _eta)
-      : numero_esami_superati(0), esami_superati{}, totale_cfu(0) {
-    matricola = _matricola;
-    eta = _eta;
-  }
+      : matricola(_matricola), eta(_eta) {}
 
   // Getters
   unsigned get_matricola() const { return matricola; }
@@ -86,15 +92,6 @@ public:
 
   friend ostream &operator<<(ostream &, Studente &);
   friend istream &operator>>(istream &, Studente &);
-
-private:
-  unsigned matricola;
-  unsigned eta;
-
-  static const unsigned ESAMI_TOTALI = 24;
-  unsigned numero_esami_superati;
-  EsameSuperato esami_superati[ESAMI_TOTALI];
-  unsigned totale_cfu;
 };
 
 ostream &operator<<(ostream &os, Studente &studente) {
