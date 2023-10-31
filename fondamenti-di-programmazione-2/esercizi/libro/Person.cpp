@@ -51,5 +51,4 @@ ostream &print(ostream &os, const Person &person) {
 int main() {
   Person Bjarne;
   Bjarne.setName("Bjarne").setAddress("Switzerland Street");
-int Person::iAmAlways = 3;
 }
