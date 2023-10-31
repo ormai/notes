@@ -10,9 +10,9 @@ int main() {
   if (mat.empty())
     cout << "mat is emtpy." << endl;
 
-  vector<vector<int>>::size_type sizeOfMath = mat.size();
+  vector<vector<int>>::size_type sizeOfMat = mat.size();
 
-  cout << sizeOfMath << endl;
+  cout << sizeOfMat << endl;
 
   vector<int> vec2 = vec;
 

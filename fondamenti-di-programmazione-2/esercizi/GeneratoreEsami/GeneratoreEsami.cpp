@@ -150,7 +150,7 @@ int main() {
   // TEST
   BancaDatiEsercizi b;
 
-  Esercizio numeriTriangolari(93, (char *)"Numeri triangolari", 5);
+  Esercizio numeriTriangolari(93, const_cast<char *>("Numeri triangolari"), 5);
 
   cout << numeriTriangolari << endl;
 
