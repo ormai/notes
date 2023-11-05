@@ -2,14 +2,14 @@
 
 Un programma è composto da un insieme di funzioni
 
-```c++
+```cpp
 int main() {
     // corpo
     return 0;
 }
 ```
 
-Non usiamo parametri e valori di ritorno in questo corso (se non 0).
+Non usiamo parametri e valori di ritorno per `main` in questo corso (se non 0).
 
 Usiamo la versione **c++ 11**. Il compilatore è `g++`.
 
@@ -21,7 +21,7 @@ g++ -std=c++11 programma.cpp -o programma_compilato
 
 Scrivere in output:
 
-```c++
+```cpp
 #include <iostream>
 
 int main() {
@@ -125,11 +125,13 @@ float pi = k; // pi sarà solo 3 perché il .14 è stato perso
 
 ## Tipo auto
 
-Il compilatore cerca di capire di che tipo è la variabile.
+Il compilatore cerca di inferire il tipo dell'oggetto.
 
 `auto i;` non va bene perché non c'è modo di individuare il tipo.
 `auto i = 0;` i è interpreta come `int`
 `auto val = val1 + val2;` val assume il tipo del risultato della somma.
+
+La dichiarazione di un oggetto di tipo `auto` deve essere inizializzata.
 
 ## Operatori
 
@@ -144,8 +146,8 @@ Il compilatore cerca di capire di che tipo è la variabile.
     ```cpp
     bool b1 = true, b2 = !b1; // b2 sarà false
     ```
-- `&` and (meglio &&)
-- `|` or (meglio ||)
+- `&` bitwise and (meglio &&: logic and)
+- `|` bitwise or (meglio ||: logic or)
     ```cpp
     if (x & y & z) {} // valuta tutto
     if (x && y && z) {} // se x o y è falso si ferma e non valuta z

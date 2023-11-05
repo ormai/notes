@@ -113,17 +113,19 @@ main // nome
 
 I tipi di ritorno possono essere tutti i tipi base (`int`, `char`, `bool`, ...), i tipi composti (ptr e ref), e quelli definiti tramite `struct`. In più si può usare `void`.
 
+Nel _prototype_, come nella dichiarazione e definizione alla funzione si passano _parametri_ (**parameters**), quando si chiama una funzione si passano invece _argomenti_ (**arguments**).
+
 ### Passaggio di parametri
 
-- per valore
+- per valore letterale costante
     ```cpp
     f(10)
     ```
-- per riferimento (la funzione usa una **copia** del valore passato)
+- per valore (la funzione usa una **copia** del valore passato), si può rendere costante
     ```cpp
     f(x)
     ```
-- per riferimento costante (il valore usato nella funzione è un alias di quello passato. Il valore originale cambia)
+- per riferimento (il valore usato nella funzione è un alias di quello passato. Il valore originale cambia), il riferimento può essere `const`
     ```cpp
     f(&x)
     ```

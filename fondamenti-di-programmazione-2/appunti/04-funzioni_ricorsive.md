@@ -2,7 +2,7 @@
 
 ## Funzioni ricorsive
 
-È una funzione che direttamente (già nel proprio corpo) o indirettamente (tramite una o più funzioni diverse) chiama se stessa.
+Una funzione che direttamente (già nel proprio corpo) o indirettamente (tramite una o più funzioni diverse) chiama se stessa.
 
 Quando si progetta una funzione ricorsiva è utile pensarla già funzionante.
 
@@ -16,22 +16,14 @@ int fact(int n) {
 ```
 
 Chiamata iniziale a `fact(5)`:
-- il caso base è `false`
-- restituisce `5 * fact(4)`
-    - nuova chiamata a `fact(4)`
-        - il caso base è `false`
-        - restituisce `4 * fact(3)`
-            - nuova chiamata a `fact(3)`
-                - il caso base è `false`
-                - restituisce `3 * fact(2)`
-                    - nuova chiamata a `fact(2)`
-                        - il caso base è `false`
-                        - restituisce `2 * fact(1)`
-                            - nuova chiamata a `fact(1)`
-                                - il caso base è `true` (non si arriva alla nuova chiamata di fact)
-                            - il valore di ritorno è `1``
-                    - il valore di ritorno è `2 * 1`
-            - il valore di ritorno è `3 * 2`
+- il caso base è `false`, restituisce `5 * fact(4)`
+    - nuova chiamata a `fact(4)`, il caso base è `false`, restituisce `4 * fact(3)`
+        - nuova chiamata a `fact(3)`, il caso base è `false`, restituisce `3 * fact(2)`
+            - nuova chiamata a `fact(2)`, il caso base è `false`, restituisce `2 * fact(1)`
+                - nuova chiamata a `fact(1)`, il caso base è `true`
+                - restituisce `1`  e termina.
+             - il valore di ritorno è `2 * 1`
+        - il valore di ritorno è `3 * 2`
     - il valore di ritorno è `4 * 6`
 - il valore di ritorno `5 * 24 = 120`
 
@@ -69,36 +61,27 @@ La ricorsione in questa funzione avviene linearmente. La funzione di Fibonacci �
 2. Non si può mettere un disco più grande su uno più piccolo.
 
 ```
-       _          |         |
-      |_|         |         |
-    _|___|_       |         |
-   |_______|  ____|____ ____|____
-      from       aux       to
-      rod        rod       rod
+     ███
+    █████
+   ███████ _______ _______
+    from    aux     to
+    rod     rod     rod
 
 
-       |          |         |
-       |          |         |
-    _______      ___        _
-   |_______|  __|___|__ ___|_|___
+
+   ███████ _█████_ __███__
 
 
-       |          |         |
-       |          _         |
-    _______      |_|        |
-   |_______|  __|___|__ _________
+             ███
+   ███████ _█████_ _______
 
 
-       |          |         |
-       |          |         |
-       _         ___     _______
-   ___|_|___  __|___|__ |_______|
 
+   __███__ _█████_ ███████
 
-       |         |         _
-       |         |        |_|
-       |         |      _|___|_
-   ____|____ ____|____ |_______|
+                     ███
+                    █████
+   _______ _______ ███████
 ```
 
 ```cpp
@@ -148,7 +131,7 @@ cout << a[9] << endl; // ultimo elemento
 ```
 
 ```
-a    +--------+ 0
+a -> +--------+ 0
      |        |
      +--------+ 1
      |        |
@@ -183,7 +166,7 @@ int sz = 5;
 int ia1[sz] = {0, 1, 2}; // inizializza solo i primi 3 (bisogna conoscere la dimensione)
 ```
 
-Non si può leggere tutto un array da input e non si può usare `==` con gli array.
+Non si può leggere tutto un array da input e non si può usare `==` con gli array built-in.
 
 ```cpp
 const int dim = 10;
@@ -193,30 +176,26 @@ int main() {
 
     cout << "Inserisci un valore: " << endl;
 
-    for (int i = 0; i < dim; i++) {
+    for (int i = 0; i < dim; i++)
         cin >> a[i];
-    }
 
     cout << "L'array letto è:\n";
 
-    for (int i = 0; i < dim; i++) {
+    for (int i = 0; i < dim; i++)
         cout << a[i] << ' ';
-    }
 }
 ```
 
 ```cpp
-for (auto elem: a) {
-    // non si conosce la posizione
-    cout << elem << endl;
-}
+for (auto elem: a)
+    cout << elem << endl; // non si conosce la posizione
 ```
 
 Come passare un'array ad una funzione:
 
 ```cpp
 void print(int[]);
-void print(int[10]); // non necessario
+void print(int[10]); // non necessario, ma utile come documentazione
 void print(int*); // indirizzo dell'inizio dell'array
 ```
 
@@ -226,9 +205,8 @@ Una funzione non può conoscere la dimensione di un'array. Un modo per risolvere
 
 ```cpp
 void print(const int a[], const unsigned size) {
-    for (int i = 0; i < size; ++i) {
+    for (int i = 0; i < size; ++i)
         cout << a[i] << ' ';
-    }
     cout << endl;
 }
 ```
@@ -237,10 +215,10 @@ Controlla se un certo `x` appartiene ad un array
 
 ```cpp
 bool cerca(const int v[], const int dim, const int x) {
-    for (int i = 0; i < dim; ++i) {
+    /* Ricerca lineare */
+    for (int i = 0; i < dim; ++i)
         if (v[i] == x)
             return true;
-    }
 
     return false;
 }

@@ -11,7 +11,7 @@ void f(int n); // ri-dichiarare questa sarebbe un errore
 void f(float n); // questa va bene
 ```
 
-Il compilatore chiamerà una delle due in base ai parametri usati nella chiamata.
+Il compilatore chiamerà una delle due in base agli argomenti usati nella chiamata.
 
 ```cpp
 void f(auto n); // fattibile ma rischioso
@@ -35,4 +35,4 @@ int main() {
 }
 ```
 
-Le variabili `static` sono diverse dalle globali in quanto sono visibili solo nella funzione;
+Le variabili `static` sono diverse dalle globali in quanto sono visibili solo nella funzione.
