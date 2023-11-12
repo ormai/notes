@@ -12,16 +12,16 @@ int main() {
   return 0;
 }
 
-void towerOfHanoi(int n, char fromRod, char toRod, char auxRod) {
+void towerOfHanoi(int n, char fromRod, char auxRod, char toRod) {
   if (n == 1) {
     cout << "Move disk 1 from " << fromRod << " to " << toRod << endl;
     return;
   }
 
-  towerOfHanoi(n - 1, fromRod, auxRod, toRod);
+  towerOfHanoi(n - 1, fromRod, toRod, auxRod);
   // A conterrà solo il disco più grande, C sarà libero
 
   cout << "Move disk " << n << " from " << fromRod << " to " << toRod << endl;
 
-  towerOfHanoi(n - 1, auxRod, toRod, fromRod);
+  towerOfHanoi(n - 1, auxRod, fromRod, toRod);
 }

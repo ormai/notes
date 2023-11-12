@@ -36,6 +36,7 @@ void leggi_array(int arr[], int dim) {
     cin >> arr[i];
 }
 
+
 int max(const int arr[], int dim) {
   int result = arr[0];
 
@@ -49,8 +50,7 @@ int max(const int arr[], int dim) {
 }
 
 void stampa_scarti(const int arr[], int dim, int max) {
-  for (int i = 0; i < dim; i++) {
+  for (int i = 0; i < dim; i++)
     cout << max << ": " << max - arr[i] << ", ";
-  }
   cout << endl;
 }
