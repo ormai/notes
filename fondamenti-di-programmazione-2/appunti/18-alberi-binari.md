@@ -80,7 +80,7 @@ Un albero può essere un puntatore alla radice. Ogni nodo è a sua volta la radi
 
 ```cpp
 // definisce un tipo enumerativo
-enum Direzione { SINISTRA = 0, DESTRA = 1 }
+enum Direzione { SINISTRA = 0, DESTRA = 1 };
 // rinomina 0 con SINISTRA
 
 template<class T> class AlberoBinario {
@@ -105,14 +105,3 @@ template<class T> int profondita(AlberoBinario<T> ab) {
 ```
 
 Ragionamento bottom-up. Si comincia a calcolare la profondità partendo dalla foglia dell'albero, salendo alla radice. Il risultato si forma nella catena di ritorno della funzione ricorsiva.
-
-```cpp
-template<class T> bool bilanciato(AlberoBinario<T> ab) {
-    if (ab.nullo())
-        return true;
-
-    int p1 = profondita(ab.figlio(SINISTRA));
-    int p2 = profondita(ab.figlio(DESTRA));
-    return p1 == p2;
-}
-```
