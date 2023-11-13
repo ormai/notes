@@ -1,20 +1,19 @@
 #include <cmath>
 #include <iostream>
-using namespace std;
 
 bool isPrime(int);
 
 int main() {
   int n;
 
-  cout << "Scrivi un numero: ";
-  if (cin >> n)
+  std::cout << "Scrivi un numero: ";
+  if (std::cin >> n)
     if (isPrime(n))
-      cout << n << " è primo." << endl;
+      std::cout << n << " è primo." << std::endl;
     else
-      cout << n << " non è primo." << endl;
+      std::cout << n << " non è primo." << std::endl;
   else {
-    cout << "Il numero che hai inserito non è valido." << endl;
+    std::cerr << "Il numero che hai inserito non è valido." << std::endl;
     return -1;
   }
 
@@ -22,7 +21,7 @@ int main() {
 }
 
 bool isPrime(int n) {
-  if (n == 1 || n == 0)
+  if (n <= 1)
     return false;
   else if (n < 4) // 2 e 3 sono primi
     return true;

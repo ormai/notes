@@ -1,6 +1,5 @@
 #include <cmath>
 #include <iostream>
-using namespace std;
 
 struct punto {
   int x;
@@ -13,10 +12,12 @@ int main() {
   punto a, b;
   double d;
 
-  cin >> a.x >> a.y;
-  cin >> b.x >> b.y;
+  std::cin >> a.x >> a.y;
+  std::cin >> b.x >> b.y;
 
-  cout << distanza(a, b) << endl;
+  std::cout << distanza(a, b) << std::endl;
+
+  return 0;
 }
 
 double distanza(const punto &p1, const punto &p2) {

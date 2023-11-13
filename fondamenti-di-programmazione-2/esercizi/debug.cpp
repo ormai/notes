@@ -1,8 +1,6 @@
-#include <exception>
 #define NDEBUG
 #include <cassert>
 #include <iostream>
-using std::cout, std::endl;
 
 int testFunction() {
   #ifndef NDEBUG
@@ -12,8 +10,8 @@ int testFunction() {
 }
 
 int main() {
+  using std::cout, std::endl;
   testFunction();
-
   assert(3 + 5 < 7);
 
   cout << __PRETTY_FUNCTION__ << endl;
@@ -24,7 +22,6 @@ int main() {
   cout << __TIME__ << endl;
   cout << __DATE__ << endl;
   cout << __BYTE_ORDER__ << endl;
-
 
   return 0;
 }

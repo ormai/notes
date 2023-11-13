@@ -27,30 +27,21 @@ void merge(int input[], int start, int end, int middle) {
 
   while (i1 <= middle && i2 <= end) {
     // Determina se il successivo si trova nel primo o nel secondo sotto array
-    if (input[i1] < input[i2]) {
-      mergedOutput[i3] = input[i1];
-      i1++;
-    } else {
-      mergedOutput[i3] = input[i2];
-      i2++;
-    }
+    if (input[i1] < input[i2])
+      mergedOutput[i3] = input[i1++];
+    else
+      mergedOutput[i3] = input[i2++];
     i3++;
   }
 
-  // Se il secondo sotto-array è più corto del primo e nel primo sono rimasti
-  // elementi da fondere: semplicemente travasali.
-  while (i1 <= middle) {
-    mergedOutput[i3] = input[i1];
-    i1++;
-    i3++;
-  }
+  /* Se il secondo sotto-array è più corto del primo e nel primo sono rimasti
+   * elementi da fondere travasali. */
+  while (i1 <= middle)
+    mergedOutput[i3++] = input[i1++];
 
   // Similmente per il secondo.
-  while (i2 <= end) {
-    mergedOutput[i3] = input[i2];
-    i2++;
-    i3++;
-  }
+  while (i2 <= end)
+    mergedOutput[i3++] = input[i2++];
 
   // Travasa il risultato completo nell'array di input. Con un approccio
   // diverso questa funzione non sarebbe void e si restituirebbe mergedOutput;
@@ -59,13 +50,12 @@ void merge(int input[], int start, int end, int middle) {
 }
 
 int main() {
-  const unsigned size = 20;
-  int inputay[size] = {9,  17, 8,  15, 5, 4, 11, 16, 13, 2,
+  constexpr unsigned size = 20;
+  int input[size] = {9,  17, 8,  15, 5, 4, 11, 16, 13, 2,
                        12, 7,  14, 18, 3, 6, 20, 10, 19, 1};
 
-  printArray(inputay, size);
-  mergeSort(inputay, 0, size - 1);
-  printArray(inputay, size);
-
+  printArray(input, size);
+  mergeSort(input, 0, size - 1);
+  printArray(input, size);
   return 0;
 }

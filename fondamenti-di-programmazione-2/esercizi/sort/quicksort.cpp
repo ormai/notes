@@ -16,9 +16,8 @@ void quickSort(int input[], int start, int end) {
   }
 }
 
-/* È necessario inferire un pivot che possa partizionare l'array in due sotto
- * array con un numero di elementi più simile possibile.
- */
+/* È necesexprsario inferire un pivot che possa partizionare l'array in due sotto
+ * array con un numero di elementi più simile possibile. */
 int partition(int input[], int start, int end) {
   int i = start, j = end + 1;
 
@@ -40,12 +39,11 @@ int partition(int input[], int start, int end) {
 
     swap(input[start], input[j]);
   }
-
   return j;
 }
 
 int main() {
-  const unsigned size = 40;
+  constexpr unsigned size = 40;
   int array[size] = {8, 10, 11, 18, 17, 12, 14, 6,  4,  15,
                      9, 5,  19, 3,  20, 2,  7,  13, 16, 1,
                      8, 10, 11, 18, 17, 12, 14, 6,  4,  15,
@@ -54,6 +52,5 @@ int main() {
   printArray(array, size);
   quickSort(array, 0, size - 1);
   printArray(array, size);
-
   return 0;
 }

@@ -2,21 +2,20 @@
 // lunghezza massima della sotto sequenza costituita da cifre uguali
 
 #include <iostream>
-using namespace std;
 
 int main() {
   int n, curr, charSequenza, lunghezza = 0, lunghezzaMax = 0;
 
-  cin >> n;
+  std::cin >> n;
 
-  if (cin >> curr) {
+  if (std::cin >> curr) {
     charSequenza = curr;
     lunghezza = 1;
     --n;
   }
 
   while (n > 0) {
-    if (cin >> curr) {
+    if (std::cin >> curr) {
       if (curr == charSequenza) {
         lunghezza += 1;
       } else {
@@ -31,6 +30,6 @@ int main() {
     --n;
   }
 
-  cout << lunghezzaMax << endl;
+  std::cout << lunghezzaMax << std::endl;
   return 0;
 }

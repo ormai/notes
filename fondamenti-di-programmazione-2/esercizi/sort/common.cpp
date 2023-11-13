@@ -15,16 +15,16 @@ void printArray(int input[], unsigned size) {
 }
 
 void swap(int &n, int &m) {
-  int tmp = n;
-  n = m;
-  m = tmp;
+  n += m;
+  m = n - m;
+  n -= m;
 }
 
 void auxiliaryInsertionSort(int input[], int start, int end) {
   for (int i = start; i <= end; i++) {
     int tmp = input[i], j = i - 1;
 
-    while ((j >= 0) && (input[j] > tmp)) {
+    while (j >= 0 && input[j] > tmp) {
       input[j + 1] = input[j];
       j--;
     }

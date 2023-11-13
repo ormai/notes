@@ -2,14 +2,9 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
-
 int main() {
-  string phrase = "Parole in fila.";
-  string phrase2("Parole in fila.");
-  string phrase3{"Parole in fila."};
-
-  string longString = phrase + phrase2;
+  std::string phrase = "Parole in fila.", phrase2("Parole in fila."),
+              phrase3{"Parole in fila."}, longString = phrase + phrase2;
 
   phrase2 += phrase3;
 
@@ -17,9 +12,9 @@ int main() {
     ;
   }
 
-  string a(10, 'a'); // aaaaaaaaaa
+  std::string a(10, 'a'); // aaaaaaaaaa
 
-  string::size_type len = a.size();
+  std::string::size_type len = a.size();
 
   // for (char c : phrase)
   //   cout << c;
@@ -34,12 +29,12 @@ int main() {
     if (!line.empty())
       cout << line << endl; */
 
-  cout << phrase << endl;
+  std::cout << phrase << std::endl;
 
   for (char &c : phrase)
     c = toupper(c);
 
-  cout << phrase << endl;
+  std::cout << phrase << std::endl;
 
   return 0;
 }

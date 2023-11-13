@@ -64,11 +64,12 @@ void printStack(std::stack<unsigned> s) {
 }
 
 void printRods() {
-  std::cout << "A: ";
+  using namespace std;
+  cout << "A: ";
   printStack(A.rod);
-  std::cout << "\nB: ";
+  cout << "\nB: ";
   printStack(B.rod);
-  std::cout << "\nC: ";
+  cout << "\nC: ";
   printStack(C.rod);
-  std::cout << std::endl;
+  cout << endl;
 }

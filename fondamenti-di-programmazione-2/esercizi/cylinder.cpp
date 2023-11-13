@@ -14,7 +14,6 @@ class Cylinder {
 
 public:
   Cylinder(double r, double h) : base(r) { height = h; }
-
   double volume() { return base.area() * height; }
 };
 
@@ -22,6 +21,5 @@ int main() {
   Cylinder foo(10, 20);
 
   std::cout << foo.volume() << std::endl;
-
   return 0;
 }

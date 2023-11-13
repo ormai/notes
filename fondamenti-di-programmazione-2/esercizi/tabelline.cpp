@@ -3,7 +3,7 @@ using namespace std;
 
 int main() {
   for (int riga = 0; riga <= 10; riga++) {
-    for (int colonna = 0; colonna <= 10; colonna++) {
+    for (int colonna = 0; colonna <= 10; colonna++)
       if (riga == 0 && colonna == 0)
         cout << '\t';
       else if (riga == 0)
@@ -12,7 +12,6 @@ int main() {
         cout << riga << '\t';
       else
         cout << colonna * riga << '\t';
-    }
     cout << '\n';
   }
   return 0;
