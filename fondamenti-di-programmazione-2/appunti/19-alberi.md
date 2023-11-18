@@ -32,11 +32,11 @@ Simmetrica:  G D H B E A C F
 A livelli:   A B C D E F G H
 
 ```cpp
-template <class T> void visitaSimmetrica(BinaryTree<T> A) {
-    if (!A.nullo()) {
-        visitaSimmetrica(A.child(left));
-        cout << A.rootNode(); // valutazione
-        visitaSimmetrica(A.child(right));
+template <class T> void visitaSimmetrica(AlberoBinario<T> alberoBinario) {
+    if (!alberoBinario.nullo()) {
+        visitaSimmetrica(alberoBinario.figlio(sinistra));
+        std::cout << alberoBinario.nodoRadice(); // valutazione
+        visitaSimmetrica(alberoBinario.figlio(destra));
     }
 }
 ```
@@ -45,14 +45,14 @@ template <class T> void visitaSimmetrica(BinaryTree<T> A) {
 /* Restituisce l'albero che contiene v se esiste, altrimenti un
  * albero nullo.
  * Caso peggiore: O(n) */
-BinaryTree<int> cerca(BinaryTree<int> A, int v) {
-    if (A.null() || A.rootNode() == v)
-        return A;
+AlberoBinario<int> cerca(AlberoBinario<int> alberoBinario, int obiettivo) {
+    if (alberoBinario.nullo() || alberoBinario.nodoRadice() == obiettivo)
+        return alberoBinario;
 
-    BinaryTree<int> t = cerca(A.child(left), v);
-    if (!t.null())
+    alberoBinario<int> t = cerca(alberoBinario.figlio(sinistra), obiettivo);
+    if (!t.nullo())
         return t;
 
-    return cerca(a.child(right), v);
+    return cerca(alberoBinario.figlio(destra), obiettivo);
 }
 ```

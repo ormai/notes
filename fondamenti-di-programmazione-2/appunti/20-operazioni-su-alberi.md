@@ -22,7 +22,7 @@ Coda: A
                 └── foglia
 ```
 
-Per ogni nodo che si va a valutare se ne aggiungono altri due, i suoi figli.
+Per ogni nodo che si valuta vengono aggiunti i suoi due figli.
 
 ```cpp
 typedef AlberoBinario<int> AlberoBinarioInt; // utile per evitare errori di compilazioni
@@ -81,12 +81,12 @@ int somma(AlberoBinario<int> a) {
       6    4 7   12
 ```
 
-15 figlio di 10 da sinistra
-25 figlio di 10 da destra
- 6 figlio di 15 da sinistra
- 4 figlio di 15 da destra
- 7 figlio di 25 da sinistra
-12 figlio di 25 da destra
+- 15 figlio di 10 da sinistra
+- 25 figlio di 10 da destra
+-  6 figlio di 15 da sinistra
+-  4 figlio di 15 da destra
+-  7 figlio di 25 da sinistra
+- 12 figlio di 25 da destra
 
 ```cpp
 int main() {
@@ -127,7 +127,7 @@ int main() {
 }
 ```
 
-## Ricerca e ordinamento di insieme tramite alberi binari
+## Ricerca e ordinamento di insiemi tramite alberi binari
 
 Ordinamento parziale:
 
@@ -152,6 +152,6 @@ void cancellare(const T& valore);
 bool nullo() const;
 ```
 
-L'albero è una struttura molto dinamica, per questo in alcuni casi è da preferire su un std::vector.
+L'albero è una struttura molto dinamica, per questo in alcuni casi è da preferire su un `std::vector`.
 
-Dato un elenco di elementi ordinato: 1 2 3 4 5 6 7 8 9, organizzarlo in un ABR genererebbe un albero degenere. Il miglior modo di rappresentare degli elementi già in ordine è stabilire che la radice è l'elemento centrale.
+Dato un elenco di elementi ordinato: 1 2 3 4 5 6 7 8 9, organizzarlo in un ABR genererebbe un albero degenere. Il miglior modo di rappresentare degli elementi già in ordine è porre l'elemento centrale della lista come radice dell'ABR.

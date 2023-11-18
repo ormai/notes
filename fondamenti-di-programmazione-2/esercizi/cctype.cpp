@@ -1,5 +1,7 @@
 #include <cctype>
+#include <forward_list>
 #include <iostream>
+#include <regex>
 using namespace std;
 
 int main() {
