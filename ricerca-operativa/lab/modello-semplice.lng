@@ -1,0 +1,22 @@
+!Modello semplice;
+
+TITLE PRIMO ESERCIZIO;
+
+! FUNZIONE OBIETTIVO;
+
+[Z] max = -2 * x1 - !comment intercalato; 2 * x2;
+
+[VINCOLO_1] x1 + 3 * x2 <= 14;
+
+[VINCOLO_2] x1 <= 5;
+
+[VINCOLO_3] x2 <= 4;
+
+[VINCOLO_4] x1 - x2 <= 4;
+
+!@FREE(x1); ! x1 e' libera in segno;
+!@GIN(x1); ! x1 e' intera;
+!@BIN(x1); ! x1 e' una variabile binaria;
+
+END
+

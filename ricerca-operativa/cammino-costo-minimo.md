@@ -7,7 +7,7 @@ Si ha un solo nodo di origine $s$, che produce flusso, $d_s = 1$, e si ha un sol
 $$\large PCCM_{s,t} \begin{cases} \underset f\min z = & c^T f \\  & Af = d \\ & f \geq 0 \end{cases}$$
 
 dove
-- $A$ è la matrice di incidenza del [[teoria-dei-grafi|grafo orientato]]
+- $A$ è la matrice di incidenza del [[grafi|grafo orientato]]
 - $d = \left[\begin{array}{c} d_s = 1 \\ d_t = -1 \\ 0 \\ \vdots \\ 0 \end{array}\right]$
 
 $PCCM_{s,t}$ ammette almeno una soluzione ottima $f^*$ binaria $f^*_{i,j} \in \{0, 1\}$. Per ogni componente $f^*$, se $f^*_{i,j} = 1$ l'arco $(i, j)$ appartiene al cammino minimo da $s$ a $t$, altrimenti non vi appartiene.
@@ -26,7 +26,7 @@ $PCCM$ ammette una soluzione ottima $f^*$ **intera**. Per ogni componente di $f^
 
 ## Algoritmo di Dijkstra
 
-> [!danger] L'algoritmo può fallire se ci sono costi negativi.
+> [!warning] I costi (pesi) sugli archi devono essere non negativi.^[CLRS, Introduction to Algorithms, fourth edition, p. 620]
 
 Risolve $PCCM$ (da un solo nodo a tutti gli altri) in $O(|V|^2)$,  solo se $c_{i,j} \geq 0$, per ogni $(i, j) \in E$.
 

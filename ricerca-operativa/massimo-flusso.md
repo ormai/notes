@@ -2,7 +2,7 @@
 
 > [!note] È un caso particolare di [[flusso-costo-minimo|problema di flusso a costo minimo]].
 
-Rappresentabile tramite un [[teoria-dei-grafi|grafo orientato]] $G = (V, E)$, dove si ha un solo nodo di origine $s$ che ha solo archi uscenti e produce una quantità di flusso $v \geq 0$. Si ha un solo nodo di destinazione $t$ che ha soli archi entranti e richiede una quantità $v \geq 0$. Tutti gli altri nodi $i:i \neq s,t$ sono di transito. Ciascun arco $(i, j)$ ha una capacità massima $b_{i, j}$.
+Rappresentabile tramite un [[grafi|grafo orientato]] $G = (V, E)$, dove si ha un solo nodo di origine $s$ che ha solo archi uscenti e produce una quantità di flusso $v \geq 0$. Si ha un solo nodo di destinazione $t$ che ha soli archi entranti e richiede una quantità $v \geq 0$. Tutti gli altri nodi $i:i \neq s,t$ sono di transito. Ciascun arco $(i, j)$ ha una capacità massima $b_{i, j}$.
 
 Si vuole *massimizzare* il flusso $v$ prodotto da $s$ e richiesto da $t$.
 

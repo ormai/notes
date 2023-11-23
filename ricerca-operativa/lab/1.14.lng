@@ -1,0 +1,37 @@
+TITLE ESERCIZIO 1.14;
+
+SETS:
+
+! INSIEMI PRIMITIVI;
+! Non hanno attributi perche' nulla dipende da dolor;
+
+OPERAI / O1..O5 /;
+REPARTI / R1..R4 /;
+
+! INSIEMI DERIVATI;
+
+OR(OPERAI, REPARTI): C, X; ! C: costi mensili di retribuzione, X: variabili decisionali;
+
+ENDSETS
+
+DATA:
+
+C = 1200 1100 1050 1300
+    1500 1000 1100 1400
+    1000 1600 1100 1150
+     950 1300 1250  800
+    1100  900 1400 1300;
+
+ENDDATA
+
+! FUNZIONE OBIETTIVO;
+
+MIN = @SUM(OPERAI(I): @SUM(REPARTI(J): C(I, J) * X(I, J)));
+
+! VINCOLI;
+
+@FOR(OPERAI(I): @SUM(REPARTI(J): X(I, J)) = 1);
+X(2, 1) + X(2, 4) = 1;
+@FOR(REPARTI(J) | J #NE# 4: @SUM(OPERAI(I): X(I, J)) = 1);
+@SUM(OPERAI(I): X(I, 4)) = 2;
+@FOR(OPERAI(I): @FOR(REPARTI(J): @BIN(X(I, J))));

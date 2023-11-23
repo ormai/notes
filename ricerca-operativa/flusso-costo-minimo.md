@@ -1,8 +1,12 @@
+---
+aliases: "flusso a costo minimo"
+---
+
 # Problema di flusso a costo minimo
 
 Si vuole trasportare della merce da stabilimenti di produzione a punti vendita.
 
-Rappresentabile tramite un [[teoria-dei-grafi|grafo orientato]] $G = (V, E)$ in cui si hanno nodi di *origine*, di *destinazione* e di *transito*.
+Rappresentabile tramite un [[grafi|grafo orientato]] $G = (V, E)$ in cui si hanno nodi di *origine*, di *destinazione* e di *transito*.
 
 - Variabili decisionali: $f_{i,j}$ è il **flusso** di merce sull'arco $(i,j)$
 - Costi: $c_{i,j}$ è il costo per transitare sull'arco $(i,j)$
