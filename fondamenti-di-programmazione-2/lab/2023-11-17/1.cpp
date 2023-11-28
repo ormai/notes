@@ -1,21 +1,54 @@
-#include "../../dispense/AlberoB.cpp"
+/* Un albero può essere rappresentato graficamente in modo testuale. Ad esempio,
+ * il seguente albero binario (non differisce molto per alberi generici):
+ *
+ *                     1
+ *                    / \
+ *                   7   9
+ *                  / \   \
+ *                 2   6   \
+ *                    / \   \
+ *                   5  11   9
+ *                          /
+ *                         5
+ *
+ * avrà la seguente rappresentazione testuale:
+ *
+ * 1
+ *   7
+ *     2
+ *     6
+ *       5
+ *       11
+ *   9
+ *     9
+ *       5
+ *
+ * Scrivere una funzione con segnatura:
+ *
+ * template<typename T> void stampa_albero(const AlberoB<T>&)
+ *
+ * che stampi su standard output la rappresentazione grafica dell’albero in
+ * input. */
+
+#include "../AlberoB.cpp"
 #include <iostream>
 #include <string>
 
-unsigned depth = 0;
-
-template <typename T> void stampa_albero(const AlberoB<T> &ab) {
-  if (ab.nullo()) {
+template <typename T>
+void stampaAlbero(const AlberoB<T> &ab, unsigned profondita) {
+  if (ab.nullo())
     return;
-  }
 
-  // https://stackoverflow.com/questions/166630/how-can-i-repeat-a-string-a-variable-number-of-times-in-c
-  std::cout << std::string(depth, ' ') << ab.radice() << '\n';
+  // costruttore di string(numeroDiRipetizioni, carattere)
+  std::cout << std::string(profondita, ' ') << ab.radice() << '\n';
 
-  ++depth;
-  stampa_albero(ab.figlio(SIN));
-  stampa_albero(ab.figlio(DES));
-  --depth;
+  stampaAlbero(ab.figlio(SIN), profondita + 1);
+  stampaAlbero(ab.figlio(DES), profondita + 1);
+}
+
+// Per non cambiare il prototype
+template <typename T> void stampa_albero(const AlberoB<T> &a) {
+  stampaAlbero(a, 0);
 }
 
 int main() {

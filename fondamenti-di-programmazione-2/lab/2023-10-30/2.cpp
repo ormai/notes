@@ -15,7 +15,7 @@ public:
 
 class Cerchio : public FiguraGeometrica {
 private:
-  double raggio{0.0};
+  double raggio = 0.0;
 
 public:
   Cerchio() = default;

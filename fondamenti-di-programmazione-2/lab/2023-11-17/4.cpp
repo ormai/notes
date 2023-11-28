@@ -1,4 +1,20 @@
-#include "../../dispense/AlberoB.cpp"
+/* Sia T un albero binario di booleani. Scrivere una funzione con segnatura:
+ *
+ * bool path_congiunzione(const AlberoB<bool>& T);
+ *
+ * che restituisca true se e solo se esiste almeno una foglia x di T tale che
+ * tutti i nodi nel percorso dalla radice di T a x abbiano come valore
+ * informativo true.
+ *
+ * e una funzione:
+ *
+ * bool path_disgiunzione(const AlberoB<bool>& T);
+ *
+ * che restituisca true se e solo se per ogni foglia x di T esiste almeno un
+ * nodo nel percorso dalla radice di T a x che abbia come valore informativo
+ * true. */
+
+#include "../AlberoB.cpp"
 #include <iostream>
 
 bool percorsoVero(const AlberoB<bool> &foglia) {

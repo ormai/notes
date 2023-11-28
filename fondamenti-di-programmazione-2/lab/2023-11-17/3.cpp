@@ -1,4 +1,24 @@
-#include "../../dispense/AlberoB.cpp"
+/* Sia T un albero binario di interi positivi. Ogni percorso radice-foglia può
+ * essere interpretato come l’intero che si ottiene concatenando tutte le cifre
+ * nell’ordine in cui si incontrano.
+ *
+ * Ad esempio il seguente albero binario:
+ *
+ * 1
+ *   2
+ *   3
+ *     4
+
+ * codifica gli interi 12 (1 -> 2) e 134 (1 -> 3 -> 4) la cui somma è 146.
+ *
+ * Scrivere una funzione con segnatura:
+ *
+ * int somma_path(const AlberoB<int>&);
+ *
+ * che restituisce la somma degli interi rappresentati da ogni percorso
+ * radice-foglia di T. */
+
+#include "../AlberoB.cpp"
 #include <iostream>
 #include <string>
 
