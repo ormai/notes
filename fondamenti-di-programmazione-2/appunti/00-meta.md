@@ -25,7 +25,7 @@ Argomenti:
 - Standard Template Library
 - Tabelle Hash ([TabelleHash](dispense/TabelleHash.pdf))
 - Alberi Binari, Alberi Binari di Ricerca e Alberi Generici ([alberi](dispense/alberi.pdf))
-- I Grafi ([grafi](dispense/grafi.pdf)
+- I Grafi ([grafi](dispense/grafi.pdf))
 - La tecnica di Programmazione Dinamica ([dinamica](dispense/dinamica.pdf))
 - La tecnica di Programmazione Golosa ([golosa](dispense/golosa.pdf))
 - La tecnica del Backtraking ([backtracking](dispense/backtracking.pdf))
